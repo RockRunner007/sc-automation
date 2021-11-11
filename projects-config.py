@@ -13,13 +13,13 @@ def standard_project(project):
     
     project.files.create({'file_path': 'readme.md',
         'branch': 'main','content': file_content,
-        'author_email': 'automation@gen6ventures.com',
+        'author_email': 'automation@auto.com',
         'author_name': 'automation',
         'commit_message': 'Create readme file'})
 
     project.files.create({'file_path': 'CODEOWNERS',
         'branch': 'main','content': file_content,
-        'author_email': 'automation@gen6ventures.com',
+        'author_email': 'automation@auto.com',
         'author_name': 'automation',
         'commit_message': 'Create CODEOWNERS file'})
     
@@ -70,6 +70,8 @@ def protect_branches(project):
             ],
         }
     )
+    project.default_branch = 'develop'
+    project.save()
 
 def main():
     configure_logging()
